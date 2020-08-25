@@ -1,6 +1,6 @@
 # A Beginner’s Guide to Convolution NeuNet (CNN)
 
-![CNN](/Users/nitishharsoor/Prop/CNN-trans/cnn.jpeg)
+![CNN](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/cnn.jpeg)
 
 ## 1. Introduction
 
@@ -24,7 +24,7 @@ A **Convolutional Neural Network (ConvNet/CNN)** is a Deep Learning algorithm wh
 
 ### <u>1.1. Overview of Convo-Neu-Net</u>
 
-![handwritting-cnn](/Users/nitishharsoor/Prop/CNN-trans/cnn-handwrite.jpeg)
+![handwritting-cnn](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/cnn-handwrite.jpeg)
 
 In the above figure, ConNet learns image features step by step, 
 
@@ -50,12 +50,12 @@ Below are few definition before we move on to understand Conv_Neu_Net:
 
 	>  **Image Dimensions** = 5 (**Height**) x 5 (**Breadth**) x 1 (Number of **channels**, eg. RGB)
 
-![kernel](/Users/nitishharsoor/Prop/CNN-trans/cnn-filter.gif) 							<img src="/Users/nitishharsoor/Prop/CNN-trans/kernel-moment.png" alt="kernel-movment" style="zoom:50%;" />
+![kernel](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/cnn-filter.gif) 							<img src="/https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/kernel-moment.png" alt="kernel-movment" style="zoom:50%;" />
 
 [^a) CNN Kernek/filter, b) Kernel Moment]: In the above demonstration, the green section resembles our **5x5x1 input image, I**. The element involved in carrying out the convolution operation in the first part of a Convolutional Layer is called the **Kernel/Filter, K**, represented in the color yellow. We have selected **K as a 3x3x1 matrix.
 Convolution of an image with different filters can perform operations such as edge detection, blur and sharpen by applying filters. The below example shows various convolution image after applying different types of filters (Kernels).
 
-![Image for post](/Users/nitishharsoor/Prop/CNN-trans/common-filter.png)
+![Image for post](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/common-filter.png)
 
 ### <u>Feature Maps</u>
 
@@ -75,7 +75,7 @@ Convolution of an image with different filters can perform operations such as ed
 
 The below figure shows convolution would work with a stride of 2.
 
-​										![stride](/Users/nitishharsoor/Prop/CNN-trans/stride.gif)	
+​										![stride](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/stride.gif)	
 
 ### <u>Padding</u>:
 
@@ -101,7 +101,7 @@ ReLU stands for Rectified Linear Unit for a non-linear operation. The output is 
 * The rectified linear **activation function** overcomes the vanishing gradient problem, allowing models to learn **faster** and **perform** **better**.
 * Since, the real world data would want our ConvNet to learn would be non-negative linear values.
 
-![ReLU](/Users/nitishharsoor/Prop/CNN-trans/relu.png)
+![ReLU](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/relu.png)
 
 * There are other non linear functions such as **tanh** or **sigmoid** that can also be used instead of ReLU. 
 
@@ -160,7 +160,7 @@ Convo layer is sometimes called feature extractor layer because features of the 
 >
 > **⚠️ Warning:** If we apply Dense layer after Convo layer without applying pooling or max pooling, then it will be computationally expensive and we don’t want it. 
 
-​                            ![pooling](/Users/nitishharsoor/Prop/CNN-trans/pooling.jpeg)
+​                            ![pooling](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/pooling.jpeg)
 
  ***So, the max pooling is only way to reduce the spatial volume of input image.***
 
@@ -174,7 +174,7 @@ There is no parameter in pooling layer but it has two hyperparameters — Filter
 - It connects neurons in one layer to neurons in another layer. It is used to classify images between different category by training.
 - Only after pooling we flattened our matrix into vector and feed it into a fully connected layer like a neural network.
 
-![dense](/Users/nitishharsoor/Prop/CNN-trans/dense.png)
+![dense](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/dense-1.png)
 
 In the above diagram, the feature map matrix will be converted as vector (x1, x2, x3, x4). With the fully connected layers, we combined these features together to create a model. Finally, we have an activation function such as softmax or sigmoid to classify the outputs as cat | y1, dog | y2 , car | y3.
 
@@ -186,45 +186,45 @@ In the above diagram, the feature map matrix will be converted as vector (x1, x2
 
 In order to implement CNNs, most successful architecture uses one or more stacks of convolution + pool layers with relu activation, followed by a flatten layer then one or two dense layers.
 
-​               **![connn](/Users/nitishharsoor/Prop/CNN-trans/connn.png)**
+​               **![connn](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/connn.png)**
 
 As we move through the network, feature maps become smaller spatially, and increase in depth. Features become increasingly abstract and lose spatial information. For example, the network understands that the image contained an eye, but it is not sure where it was.
 
 Here’s an example of a typical CNN network in Keras.
 
-![cnn_keras](/Users/nitishharsoor/Prop/CNN-trans/cnn_keras.png)
+![cnn_keras](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/cnn_keras.png)
 
 Here’s the result when you do `model.summary()`
 
-![cnn-summary](/Users/nitishharsoor/Prop/CNN-trans/cnn-summary.png)
+![cnn-summary](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/cnn-summary.png)
 
 ### Conv2d_1
 
-![summar1](/Users/nitishharsoor/Prop/CNN-trans/summar1.png)
+![summar1](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/summar1.png)
 
 `Filter size ( 3 x 3) * input depth (1) * # of filters (32) + Bias 1/filter (32) = 320.` Here, the input depth is 1, because it’s for MNIST black and white data. Note that in tensorflow by default every convolution layer has bias added. 	
 
 ### Max_pooling2d_1
 
-![summary2](/Users/nitishharsoor/Prop/CNN-trans/summary2.png)
+![summary2](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/summary2.png)
 
 Pooling layers don’t have parameters
 
 ### Conv2d_2
 
-![summary3](/Users/nitishharsoor/Prop/CNN-trans/summary3.png)
+![summary3](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/summary3.png)
 
 Filter size (3 x 3) * input depth (32) * # of filters (64) + Bias, 1 per filter (64) = 18496
 
 ### Flatten_1
 
- ![png](/Users/nitishharsoor/Prop/CNN-trans/sumarry4.png)
+ ![png](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/sumarry4.png)
 
 It unstacks the volume above it into an array.
-![array](/Users/nitishharsoor/Prop/CNN-trans/array.png)
+![array](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/array.png)
  ### Dense_1
 
-![dense-1](/Users/nitishharsoor/Prop/CNN-trans/dense-1.png)Input Dimension (128) * Output 
+![dense-1](https://github.com/punitkmryh/Conv_2D_keras/blob/master/CNN_2d/dense-1.png)Input Dimension (128) * Output 
 
 Dimension (10) + One bias per output neuron (10) = 1290
 
